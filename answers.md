@@ -103,6 +103,19 @@ it is a directive that allows you to evaluate an expression in the current scope
 it is the initial value on an input place for you already.
 
 Why use ng-src and ng-href?
+Because AngularJS has some wait time to load and using this directives it allows the
+browser not to show an empty image or url link. It only appears until Angular has been loaded.
+
+What are directives?
+They instructions you use in angularJS to append elements to the DOM quickly and easily.
+
+What does ng-class require an object to be passed in?
+Yes ng-class does require an object to be passed in!
+
+What order does an ng-repeat display items in?
+ng-repeat display object in order of index 0 until the end.
+
+
 
 
 
