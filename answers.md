@@ -1,6 +1,14 @@
 Lesson 1
 Questions
 
+What is ng-app? bootstraps angular
+What is ng-controller? defines where (start/end) controller lives in the HTML; links back to the controller in the modules
+What is ng-click?  click event (akin 'on click' in jQuery)
+What is ng-repaet? used to iterate (akin to a "forEach")
+What is $scope? This is what binds the controller to the view. Binds values/variables to the view
+SETTING?GETTING an angular module - angular code lives in the view/model
+CREATING a controller - defines waht gets bound to the veiw via "$scope"
+
 Why learn Angular JS over other frameworks like Ember, Backbone, Knockout, etc?
 - AngularJS gives XAML Developers a Place to GO on the web
 -Angular gets rid of ritual and ceremony
@@ -87,6 +95,14 @@ What is "dirty checking"?
 it is a loop that checks for changes within the scope variable.
 
 Lesson 4 Expression and Built in Filters
+
+
+Lesson 5
+What is the purpose of ng-init?
+it is a directive that allows you to evaluate an expression in the current scope
+it is the initial value on an input place for you already.
+
+Why use ng-src and ng-href?
 
 
 
