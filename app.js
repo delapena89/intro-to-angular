@@ -8,6 +8,13 @@ app.controller("MyFirstController", function($scope){
 app.controller("ExercisesController", function($scope){
   $scope.FavColor = "Red";
   $scope.rightNow = new Date();
+  $scope.number = 5;
+  $scope.pickRandomNumber = function() {
+    $scope.number = Math.floor(Math.random() * 10) + 1;
+  };
+  $scope.reverse = function () {
+  $scope.text = $scope.text.split('').reverse().join('');
+  };
 });
 
 

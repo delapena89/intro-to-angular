@@ -115,7 +115,7 @@ Yes ng-class does require an object to be passed in!
 What order does an ng-repeat display items in?
 ng-repeat display object in order of index 0 until the end.
 
-
+Lesson 6
 
 
 
