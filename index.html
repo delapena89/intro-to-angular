@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>{{ greeting }} World</title>
+
+  </head>
+  <body>
+    <p>{{1 + 6}}<p>
+    <br>
+    <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
+    <p>{{ greeting }} world!</p>
+    <input type="text" ng-model="name" ng-init="name='BoJack'" placeholder="What is your name?">
+    <h1>My name is: {{name}}</h1>
+    <p>Choose one of the following
+      <select ng-model="value">
+        <option value="I love Dogs &lt 3">Dogs</option>
+        <option value="Cats">Cats</option>
+        <option value="Dogs and Cats">Dogs and Cats</option>
+        <option value="Neither">Neither</option>
+      </select>
+    </p>
+    <h3>Your choices is : {{ value }}</h3>
+
+    <p>1 + 2 = {{1 + 2}}</p>
+    <p>My name is {{"BoJack" + " Horseman"}}</p>
+    <p>The array [99,43,22] is {{[99,43,22].length}} items long.</p>
+
+    {{3.14159265359 | currency:"&euro;"}}
+
+    <h1>Please say something</h1>
+    <input type="text" ng-model="text">
+    <h2>Yelling: {{text | uppercase}}</h2>
+    <h3>Whispering: {{text| lowercase}}</h3>
+
+    <p>{{3.14159265359 | number:3}}</p>
+    <p>{{3.14159265359 | number:6}}</p>
+    <p>{{3.14159265359 | number:1}}</p>
+
+    <h1>How many digits of pi do you want?
+      <select ng-model="digits" ng-init="digits=5">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </h1>
+
+    <ng-pluralize count='digits'
+                     when="{'1': 'Here you go! The first decimal of pi',
+                            'other': 'here you go! The first {} decimals of Pi!'}">
+    </ng-pluralize>
+
+    <h3>{{3.14159265359 | number:digits}}</h3>
+
+    <h1>Super Useful Tip Calculator</h1>
+    <p>How much did your meal cost? <input type="number" ng-model="price"></p>
+    <p>How much do you want to tip?</p>
+    <select ng-model="tip">
+      <option value=".10">10%</option>
+      <option value=".15">15%</option>
+      <option value=".20">20%</option>
+    </select>
+    <h2>Subtotal: {{price | currency}}</h2>
+    <h2>Tip : {{(price*tip) | currency}}</h2>
+
+    <h1>Please fill out the following!</h1>
+
+    <h4>Boy's Name
+    <input type="text" ng-model="boyName">
+    </h4>
+    <h4>Adjective
+    <input type="text" ng-model="adjective">
+    </h4>
+    <h4>Plural noun
+    <input type="text" ng-model="pluralNoun">
+    </h4>
+    <h4>An insect, plural
+    <input type="text" ng-model="insectPlural">
+    </h4>
+    <h4>Plural noun
+    <input type="text" ng-model="nounPlural">
+    </h4>
+    <h4 >A verb ending is "s"
+    <input type="text" ng-model="verb">
+    </h4>
+
+    <h1>Mad with The libs</h1>
+    <p>Im in love with {{boyName}}.</p> He's so {{adjective}}!
+    He has big flat {{pluralNoun}}, and when our {{insectPlural}} meet, i get
+    {{nounPlural}} in my stomach. I've fallen for him like a ton of {{verb}},
+    and he shuffles for me, too. But i think he's got another girlfriend. What should i do?</p>
+
+    <div ng-controller="MyFirstController">
+      <h1>My name is: {{name}}</h1>
+      <input ng-model="name" type="text" placeholder="What is your name?">
+    </div>
+
+    <div ng-controller="ExercisesController">
+      <h1>My favorite color: {{FavColor}}</h1>
+      <h1>{{rightNow}}</h1>
+      <input ng-model="FavColor" type="text" placeholder="What is your favorite color?">
+    </div>
+
+    <ul ng-controller="MyFirstController">
+      <li ng-repeat="n in [1,1,2,5,6,9,9,9] track by $index">
+        {{n}}
+      </li>
+    </ul>
+
+    <div ng-show="3 + 4 == 5">
+      3 + 4 isn't 5, don't show
+    </div>
+
+    <div ng-show="3 + 4 == 7">
+      3 + 4 is 7, do show
+    </div>
+
+    <div ng-hide="3 + 4 == 5">
+        3 + 4 isn't 5, don't hide
+    </div>
+
+    <div ng-hide="3 + 4 == 7">
+      3 + 4 is 7, do hide
+    </div>
+
+
+    <h1>Sign Up Page</h1>
+    <input ng-model="password" type="password">
+    <div ng-class="{highlight: password.length > 6}">
+    <ng-pluralize count='password.length'
+                     when="{'0': 'Enter a Password',
+                            'other': 'Your password is {} characters'}">
+
+    </ng-pluralize>
+    </div>
+
+    <button ng-show="password.length > 6">Sign Up!</button>
+
+    <div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8</div>
+    <div ng-class="{highlight: 4 + 4 == 10}">4 + 4 = 10</div>
+
+
+
+
+
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
