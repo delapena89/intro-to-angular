@@ -142,31 +142,20 @@
     <div ng-class="{highlight: 4 + 4 == 10}">4 + 4 = 10</div>
 
 
+    <div ng-controller="CameraShop">
+      <h1>Camera Shop</h1>
+      <select ng-model="sortOption">
+        <option value="rating">Rating</option>
+        <option value="price">Price</option>
+      </select>
 
-    <h1>Camera Shop</h1>
-    <select>
-      <option>Rating</option>
-      <option>Price</option>
-    </select>
-
-    <h3>Nikon D3100 DSLR</h3>
-    <h4>Price: {{369.99 | currency}}</h4>
-    <h4>Rating: 3.4</h4>
-    <img ng-src='http://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg'>
-
-    <h3>Canon EOS 70D</h3>
-    <h4>Price: {{1099.00 | currency}}</h4>
-    <h4>Rating: 2.0</h4>
-    <img ng-src='http://ecx.images-amazon.com/images/I/81U00AkAUWL._SX522_.jpg'>
-
-    <h3>Nikon D810A</h3>
-    <h4>Price: {{3796.95 | currency}}</h4>
-    <h4>Rating: 4.2</h4>
-    <img ng-src='http://ecx.images-amazon.com/images/I/91wtXIfLl2L._SX522_.jpg'>
-
-
-
-
+      <div ng-repeat='camera in cameras | orderBy: sortOption'>
+        <h3>{{camera.title}}</h3>
+        <p ng-class="{onSale: camera.onSale}">Price: {{camera.price | currency}}<span ng-show='camera.onSale'> On Sale</span></p>
+        <p>Rating: {{camera.rating | number: 1}}</p>
+        <img ng-src="{{camera.image}}">
+      </div>
+    </div>
 
 
 

@@ -11,3 +11,7 @@ img {
   width: 250px;
   height: 250px;
 }
+
+.onSale {
+  color: red;
+}
