@@ -6,3 +6,8 @@ body {
 .highlight {
   color: red;
 }
+
+img {
+  width: 250px;
+  height: 250px;
+}
