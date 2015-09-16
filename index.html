@@ -190,18 +190,19 @@
 <div>
 
 <h2>Contacts App</h2>
-
+<div ng-controller="Contacts">
   <form class="form-inline">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="name">
+      <input type="text" class="form-control" id="name" ng-model='name1' placeholder="name">
       <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" placeholder="email">
+      <input type="text" class="form-control" id="email" ng-model="email" placeholder="email">
       <label for="phone">Phone</label>
-      <input type="text" class="form-control" id="phone" placeholder="phone">
-      <button ng-click="addContact">Add Contact</button>
+      <input type="text" class="form-control" id="phone" ng-model="phone" placeholder="phone">
+      <button ng-click="addContact()">Add Contact</button>
     </div>
   </form>
+      <input class='' type="text" ng-model="searchContacts" placeholder="name">
 
   <div>
     <table class="table table-striped">
@@ -212,24 +213,19 @@
           <th>Phone</th>
         </tr>
       </thead>
-      <tbody id="info">
-        <tr>
-          <th scope="row"></th>
-          <td></td>
-          <td></td>
-          <td></td>
+      <tbody>
+        <tr ng-repeat="contact in contacts | filter: {name:searchContacts}">
+          <td>{{ contact.name }}</td>
+          <td> {{ contact.email }}</td>
+          <td> {{ contact.phone }} </td>
         </tr>
       </tbody>
     </table>
 
   </div>
-
 </div>
 
-
-
-
-
+</div>
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>

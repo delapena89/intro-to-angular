@@ -93,8 +93,22 @@ app.controller("PingPong", function($scope) {
 });
 
 app.controller("Contacts", function($scope) {
+  $scope.contacts = [];
+
   $scope.addContact = function () {
-    $scope
+    $scope.newContact = {
+    name: $scope.name1,
+    email: $scope.email,
+    phone: $scope.phone
+  };
+
+    $scope.contacts.push($scope.newContact);
+  console.log($scope.contacts);
+  console.log('test');
+    $scope.name1 = '';
+    $scope.email = '';
+    $scope.phone = '';
+
   };
 });
 
